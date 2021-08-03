@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
     if (Math.floor(Math.random() * 3) > 1) {
         setTimeout(function(){ 
             res.send('Hello World random!')
-        }, 55000);
+        }, 30000);
     } else {
         res.send('Hello World!')
     }
