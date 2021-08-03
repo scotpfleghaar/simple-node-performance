@@ -6,15 +6,15 @@ var os = require('os-utils');
 
 
 app.get('/', (req, res) => {
+    os.cpuUsage(function(v){
     if (Math.floor(Math.random() * 3) > 1) {
-        setInterval(() => {
-            os.cpuUsage(function(v){
-                res.send('CPU Usage (%): ' + v)
-            });
+        setTimeout(() => {
+                res.send('CPU Usage Inside (%): ' + v)
         }, 60000)
     } else {
-        res.send('Hello World!')
+        res.send('CPU Usage (%): ' + v)
     }
+});
 })
 
 app.listen(port, () => {
