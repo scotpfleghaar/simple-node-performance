@@ -21,4 +21,4 @@ setInterval(() => {
         .catch(function (error) {
           console.log(error);
         });
-}, 31000)
+}, 2000)
