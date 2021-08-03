@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 var os = require('os-utils');
 
-const iterations = 50;
+const iterations = 250;
 const multiplier = 1000000000;
 
 function calculatePrimes(iterations, multiplier) {
