@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 var os = require('os-utils');
 
-const iterations = 500;
+const iterations = 50;
 const multiplier = 1000000000;
 
 function calculatePrimes(iterations, multiplier) {
@@ -32,7 +32,7 @@ function doPointlessComputationsWithBlocking() {
 
 app.get('/', (req, res) => {
     os.cpuUsage(function(v){
-        console.log('CPU Usage (%): ' + v)
+        console.log('CPU Usage (%): ' + (v*100).toFixed(2))
     });
     if (Math.floor(Math.random() * 3) > 1) {
         doPointlessComputationsWithBlocking()
