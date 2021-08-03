@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-var os = require('os');
+var os = require('os-utils');
 
 
 var fibonacci_series = function (n) 
@@ -20,9 +20,9 @@ var fibonacci_series = function (n)
 
 app.get('/', (req, res) => {
     console.log("-------------------------");
-    console.log(os.cpus());
-    console.log(os.totalmem());
-    console.log(os.freemem())
+    os.cpuUsage(function(v){
+        console.log( 'CPU Usage (%): ' + v );
+    });
     if (Math.floor(Math.random() * 3) > 1) {
         fibonacci_series(250)
         res.send('Hello World fibonacci! ')
