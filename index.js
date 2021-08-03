@@ -18,7 +18,7 @@ var fibonacci_series = function (n)
 
 app.get('/', (req, res) => {
     if (Math.floor(Math.random() * 3) > 1) {
-        fibonacci_series(10000)
+        fibonacci_series(250)
         res.send('Hello World fibonacci! ')
         
     } else {
